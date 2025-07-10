@@ -1,0 +1,174 @@
+import 'package:flutter/material.dart';
+
+void main(){
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Portfolio',
+      home: Scaffold(
+        backgroundColor: Color(0xFFE6D9F4),
+        appBar: AppBar(
+          centerTitle: true,
+          backgroundColor: Color(0xFFD2A8F5),
+          elevation: 0,
+          title: Text(
+            'MY PORTFOLIO',
+            style: TextStyle(fontFamily: 'Montserrat', fontSize: 25, fontWeight: FontWeight.w800, color: Color(0xFF26066A),
+            )
+          ),
+        ),
+        body: ListView(
+          children: [
+            Padding(
+              padding: EdgeInsets.only(top: 20),
+              child: Center(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(100), 
+                  child: Image.asset(
+                    'assets/GANDA.png', 
+                    width: 160, 
+                    height: 160, 
+                    fit: BoxFit.cover, 
+                  ),
+                ),
+              ),
+            ),
+            
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              child: Card(
+                shape: RoundedRectangleBorder(borderRadius: BorderRadiusGeometry.circular(20)),
+                color: Colors.white,
+                child: Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Column(children: [
+                    Text("Romina Victoria R. Salapare", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Color(0xFF26066A),
+                    ),),
+                    SizedBox(height: 4),
+                    Text("Manuel S. Enverga Universty Foundation", style: TextStyle(fontSize: 16),
+                    ),
+                    Text("2nd Year - BSIT", style: TextStyle(fontSize: 16),
+                    )
+                  ],
+                  ),
+                ),
+              ),
+            ),
+
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              padding: EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Color(0xFFD2A8F5),
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Text(
+                "An Information Technology student and an active student council member aiming to use my technical skills and leadership experience in the society while pursuing personal and professional growth.",
+                style: TextStyle(fontSize: 14),
+                textAlign: TextAlign.justify,
+              ),
+            ),
+
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 10),
+              child: Text("CONTACT INFORMATION", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Color(0xFF26066A)),
+              ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 4),
+              child: Container(
+                padding: EdgeInsets.all(12),
+                decoration: BoxDecoration(color: Color(0xFFCEB8E8), borderRadius: BorderRadius.circular(20),
+              ),
+              child: Row(children: [
+                Icon(Icons.phone, color: Colors.deepPurple),
+                SizedBox(width: 10),
+                Text("09947525457"),
+              ],
+              ),
+              ),
+
+            ),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 4),
+              child: Container(
+                padding: EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Color(0xFFCEB8E8),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Row(children: [
+                  Icon(Icons.email, color: Colors.deepPurple),
+                  SizedBox(width: 10),
+                  Text("m.salapare11@gmail.com"),
+                ],
+                ),
+              ),
+            ),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical:4),
+              child: Container(
+                padding: EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Color(0xFFCEB8E8),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Icon(Icons.location_on, color: Colors.deepPurple),
+                    SizedBox(width: 10),
+                    Expanded(child: Text("Brgy. Dalahican, Lucena City, Quezon Province"),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+              child: Text("SKILLS AND INTERESTS", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Color(0xFF26066A)),
+              ),
+            ),
+
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Wrap(
+                spacing: 10,
+                runSpacing: 10,
+                children: [
+                  "Coding",
+                  "UI Designing",
+                  "Graphic Designing",
+                  "Music",
+                  "Startups",
+                  "Web Development"
+                ].map((skill) {
+                  return Container(
+                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                    decoration: BoxDecoration(
+                      color: Color(0xFFCEB8E8),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Text(skill),
+                  );
+                }).toList(),
+              ),
+            ),
+            SizedBox(height: 30),
+          ],
+        ),
+      ),
+    );
+  }
+}
